@@ -1,0 +1,8 @@
+<?php get_header() ?>
+<div id="wp-content" class="d-flex">
+    <?php get_sidebar(); ?>
+    <div id="content" class="m-2">
+        <!-- content---------------------------- -->
+    </div>
+</div>
+<?php get_footer() ?>

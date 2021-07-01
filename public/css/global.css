@@ -1,0 +1,133 @@
+#header{
+    z-index: 100000 !important;
+}
+
+#sub-menu {
+    background: lightblue !important;
+    top: 90%;
+    left: 40%;
+    display: none;
+    box-shadow: 10px 10px 40px rgb(5, 5, 5);
+}
+
+#sub-menu li {
+    text-align: start !important;
+    transition: 0.5s;
+}
+
+#sub-menu li a {
+    color: black !important;
+}
+
+#sub-menu li:hover {
+    box-shadow: 0 0 10px rgb(88, 14, 14), 0 0 50px rgb(0, 0, 0);
+    background: lightgrey;
+    border-radius: 4%;
+}
+
+/* ==================sub menu=================== */
+
+.title-log {
+    display: none;
+    position: absolute;
+}
+
+.menu-item {
+    text-align: center;
+    transition: 0.5s;
+    width: 200px !important;
+    border-radius: 8%;
+}
+
+.menu-item:hover {
+    box-shadow: 0 0 10px white, 0 0 40px white, 0 0 80px white;
+    background: lightblue;
+}
+
+.menu-item:hover a {
+    color: rgb(0, 0, 0) !important;
+}
+
+.icon-1 {
+    transition: 0.75s;
+    transform: rotate(-90deg);
+}
+
+#drop-menu:hover .icon-1 {
+    transform: rotate(0deg);
+}
+
+.icon {
+    transition: 0.5s;
+}
+
+#login:hover .icon {
+    transform: rotate(360deg);
+    color: rgb(81, 212, 81);
+}
+.num-oder{ 
+    top: 10%;
+    text-align: center;
+    right: 13%;
+    font-size: 20px;
+    background: wheat;
+    width: 30px;
+    position: absolute;
+    color: red;
+    border-radius: 50%;
+}
+/* ================= content ================= */
+
+#content {
+    min-height: 900px;
+    padding-top: 96px;
+}
+
+#search-ip {
+    right: 6% !important;
+    width: 20% !important;
+    display: none;
+}
+
+.icon-2 {
+    top: 20% !important;
+    right: 4% !important;
+    display: none;
+}
+
+.icon-2-e {
+    transition: 2s;
+    transform: rotate(720deg);
+}
+
+#search:hover {
+    text-shadow: 0 0 50px rgb(58, 171, 206), 0 0 40px rgb(52, 161, 165), 0 0 80px rgb(63, 190, 212);
+}
+
+#search-ip {
+    box-shadow: 2px 5px 10px rgb(84, 221, 226);
+}
+/*========================== banner====================== */
+
+.carousel-control-prev-icon{
+    font-size: 900 !important;
+}
+.policy-item{
+    padding:20px 10px;
+    border-radius: 2%;
+    transition: 0.75s;
+}
+.policy-item:hover{
+ 
+    box-shadow: 0 0 20px black;
+}
+.owl-stage-outer{
+    padding: 20px !important;
+}
+.item{
+    transition: 0.75s;
+    border-radius: 2%;
+}
+.item:hover{
+    box-shadow: 0 0 20px black;
+}

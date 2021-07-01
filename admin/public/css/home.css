@@ -1,0 +1,100 @@
+#wp-content {
+    min-height: 820px;
+}
+
+#content {
+    min-height: 88vh;
+    width: 100%;
+    box-shadow: 0 0 10px black;
+}
+
+/* 
+-------------------------------------------------
+                sidebar css
+ -------------------------------------------------
+ */
+
+#sidebar {
+    min-height: 88vh;
+    box-shadow: 0 0 10px black;
+    cursor: pointer;
+}
+
+.menu-item {
+    font-weight: 700;
+}
+
+.menu-item:hover {
+    color: rgb(228, 99, 87);
+}
+
+.sub-menu {
+    margin-top: 10px;
+    border-top: black 2px solid;
+    border-left: black 2px solid;
+    display: none;
+    width: 100%;
+}
+
+.sub-menu li {
+    border-bottom: rgb(98, 98, 98) 2px solid;
+}
+
+.sub-menu li:hover {
+    background-color: rgba(0, 0, 0, 0.226);
+    border-radius: 3px;
+}
+
+.cuso {
+    cursor: pointer;
+}
+
+.ck-rounded-corners .ck.ck-editor__main>.ck-editor__editable, .ck.ck-editor__main>.ck-editor__editable.ck-rounded-corners {
+    height: 400px;
+    width: 100%;
+}
+
+#show_list_file {
+    height: 380px;
+    width: 500px !important;
+    position: absolute;
+    margin-top: 45px;
+    margin-left: 110px;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    border: 2px rgb(50, 223, 142) solid !important;
+    border-bottom: solid transparent !important;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link:hover {
+    border: 2px rgb(50, 223, 142) solid !important;
+    border-bottom: solid transparent !important;
+    background: rgb(50, 223, 142);
+}
+
+.nav-tabs {
+    border-bottom: 1px solid rgb(50, 223, 142) !important;
+}
+
+.logout {
+    display: none;
+    cursor: pointer;
+    height: 40px;
+}
+
+/* ==============================header info ==============================*/
+
+#wp-info {
+    display: none;
+    z-index: 1000000000;
+    background: rgba(0, 0, 0, 0.445);
+}
+#action{
+    background: rgba(0, 0, 0, 0.445);
+}
+/* =================add post ======================================= */
+#cke_1_contents{
+
+    height: 430px !important;
+}
