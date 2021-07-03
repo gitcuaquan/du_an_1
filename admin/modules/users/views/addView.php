@@ -1,15 +1,15 @@
-<?php get_header();  ?>
+<?php get_header();   ?>
 <div id="wp-content" class="d-flex">
     <?php get_sidebar(); ?>
     <div id="content" class="m-2  ">
-    <h1 class=" text-center"><?php echo form_error("add"); ?></h1>
+        <h1 class=" text-center"><?php echo form_error("add"); ?></h1>
         <form action="" class="" method="post">
             <div class="ps-2 float-start w-25 mt-3 border ms-2 m-0">
                 <div class="col-md-11 ">
                     <div class="mb-3">
                         <label for="input1" class=" p-1 rounded bg-info form-label">Tên Đăng Nhập</label>
                         <label class="text-danger" for=""><?php echo form_error('username') ?></label>
-                        <input type="text"  name="username" class="form-control" id="input1">
+                        <input type="text" name="username" class="form-control" id="input1">
                     </div>
                 </div>
                 <!-- ====================================================================================== -->
@@ -63,7 +63,7 @@
 
                     </div>
                 </div>
-               
+
                 <div class="col-md-11 ">
                     <div class="mb-3 text-center">
                         <input type="submit" name="btn_reg" class="btn btn-success" value="Đăng Ký">
@@ -77,7 +77,7 @@
                 <h1 class="text-center"> Thẻ Quản Lý</h1>
                 <div class="row">
                     <div class="col-3">
-                        <img src="" id="qr"  alt="mã QR">
+                        <img src="" id="qr" alt="mã QR">
                     </div>
                     <div class="col-8 ms-3 mt-4">
                         <div class="row">
@@ -98,7 +98,7 @@
                             </div>
 
                             <div class=" mt-3 col-12">
-                                 <h4>Địa Chỉ : <strong class="input3"></strong> </h4>
+                                        <h4>Địa Chỉ : <strong class="input3"></strong> </h4>
                             </div>
 
                             <div class=" mt-3 col-10">
@@ -115,6 +115,31 @@
     </div>
 </div>
 <script src="public/js/upload.js"></script>
-<script src="public/js/info.js"></script>
+<script>
+    $(document).ready(function() {
+        
+        var linkQr = "https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=0";
+        $(".col-3 img#qr").attr("src", linkQr);
+        $(".form-control").keyup(function(e) {
+            let id = $(this).attr("id");
+            let val = $("#" + id).val();
+            $("." + id).text(val);
+            if (id == "input1") {
+                var linkQr = "https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=username=" + val;
+                $(".col-3 img#qr").attr("src", linkQr);
+            }
+        });
+        $("input:radio").click(function() {
+            var check = $(this).val();
+            if (check == 'female') {
+                var gender = "Nữ"
+            } else {
+                var gender = "Nam"
+            }
+            $(".gender").text(gender);
+        });
+
+    });
+</script>
 
 <?php get_footer() ?>

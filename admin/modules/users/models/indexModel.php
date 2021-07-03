@@ -23,10 +23,7 @@ function get_manager_by_id($id){
     }
         return false;
  }
-function p($string)
-{
-   return $_POST[$string];
-}
+
 function get_all_user(){
     return $result= db_fetch_array("SELECT * FROM `tbl_user`");
 }

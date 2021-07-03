@@ -1,4 +1,4 @@
-<?php get_header() ?>
+<?php get_header();  ?>
 <div class="container-fluid">
     <div class="row pb-5 ">
         <div class="col-md-12 p-0 col-12">
@@ -61,42 +61,19 @@
         <div class="container">
             <div class="col-md-12">
                 <div id="product-hot_owl" class="owl-carousel py-2 owl-theme">
-                    <div class="item" style="width:280px;height:420px; background:greenyellow;">
-                        <h4>1</h4>
-                    </div>
-                    <div class="item" style="width:280px;height:420px; background:greenyellow;">
-                        <h4>2</h4>
-                    </div>
-                    <div class="item" style="width:280px;height:420px; background:greenyellow;">
-                        <h4>3</h4>
-                    </div>
-                    <div class="item" style="width:280px;height:420px; background:greenyellow;">
-                        <h4>4</h4>
-                    </div>
-                    <div class="item" style="width:280px;height:420px; background:greenyellow;">
-                        <h4>5</h4>
-                    </div>
-                    <div class="item" style="width:280px;height:420px; background:greenyellow;">
-                        <h4>6</h4>
-                    </div>
-                    <div class="item" style="width:280px;height:420px; background:greenyellow;">
-                        <h4>7</h4>
-                    </div>
-                    <div class="item" style="width:280px;height:420px; background:greenyellow;">
-                        <h4>8</h4>
-                    </div>
-                    <div class="item" style="width:280px;height:420px; background:greenyellow;">
-                        <h4>9</h4>
-                    </div>
-                    <div class="item" style="width:280px;height:420px; background:greenyellow;">
-                        <h4>10</h4>
-                    </div>
-                    <div class="item" style="width:280px;height:420px; background:greenyellow;">
-                        <h4>11</h4>
-                    </div>
-                    <div class="item" style="width:280px;height:420px; background:greenyellow;">
-                        <h4>12</h4>
-                    </div>
+                    <?php foreach ($list_product_hot as $item) { ?>
+                        <div class="item overflow-hidden" style="width:290px;height:500px;">
+                            <div class="card card-hot" style="width:290px;height:500px;">
+                                <a href="">
+                                    <img src="<?php echo "admin/" . $item['thumb_url']['img_url']; ?>" class="card-img-top" alt="...">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title overflow-hidden" style="height: 55px;"><?php echo $item['product_name']; ?></h5>
+                                    <a href="#" class="btn btn-buy btn-primary">Mua Ngay</a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -108,42 +85,20 @@
             <div class="row">
                 <div class="col-md-12">
                     <div id="product-new_owl" class="owl-carousel owl-theme">
-                        <div class="item" style="width:280px;height:420px; background:violet;">
-                            <h4>1</h4>
-                        </div>
-                        <div class="item" style="width:280px;height:420px; background:violet;">
-                            <h4>2</h4>
-                        </div>
-                        <div class="item" style="width:280px;height:420px; background:violet;">
-                            <h4>3</h4>
-                        </div>
-                        <div class="item" style="width:280px;height:420px; background:violet;">
-                            <h4>4</h4>
-                        </div>
-                        <div class="item" style="width:280px;height:420px; background:violet;">
-                            <h4>5</h4>
-                        </div>
-                        <div class="item" style="width:280px;height:420px; background:violet;">
-                            <h4>6</h4>
-                        </div>
-                        <div class="item" style="width:280px;height:420px; background:violet;">
-                            <h4>7</h4>
-                        </div>
-                        <div class="item" style="width:280px;height:420px; background:violet;">
-                            <h4>8</h4>
-                        </div>
-                        <div class="item" style="width:280px;height:420px; background:violet;">
-                            <h4>9</h4>
-                        </div>
-                        <div class="item" style="width:280px;height:420px; background:violet;">
-                            <h4>10</h4>
-                        </div>
-                        <div class="item" style="width:280px;height:420px; background:violet;">
-                            <h4>11</h4>
-                        </div>
-                        <div class="item" style="width:280px;height:420px; background:violet;">
-                            <h4>12</h4>
-                        </div>
+                        <?php foreach ($list_product_new as $item) { ?>
+                            <div class="item overflow-hidden" style="width:290px;height:500px;">
+                                <div class="card card-hot" style="width:290px;height:500px;">
+                                    <a href="">
+                                        <img src="<?php echo "admin/" . $item['thumb_url']['img_url']; ?>" class="card-img-top" alt="..."></a>
+                                    <div class="card-body">
+                                        <h5 class="card-title card-title-new"><?php echo $item['product_name']; ?></h5>
+                                        <div class="btn-bg">
+                                            <a href="#" class="btn btn-buy btn-primary">Mua Ngay</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
@@ -155,29 +110,31 @@
             <div class="row">
                 <?php foreach ($list_post as $post) { ?>
                     <div class="col-md-6">
-                    <div class="card mb-3" style="max-width: 540px;">
-                        <div class="row g-0" style="height: 270px !important; ">
-                            <div class="col-md-4"  >
-                                <img  style="height: 270px;" src="admin/<?php echo $post['thumb_url'] ?>" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title"><a href="#" class="text-decoration-none text-info"> <?php echo $post['post_title'] ?></a></h5>
-                                    <div class="card-text overflow-auto" style="height:150px;">
-                                    <?php echo $post['post_content'] ?>
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0" style="height: 270px !important; ">
+                                <div class="col-md-4">
+                                    <img style="height: 270px;" src="admin/<?php echo $post['thumb_url'] ?>" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><a href="#" class="text-decoration-none text-info"> <?php echo $post['post_title'] ?></a></h5>
+                                        <div class="card-text overflow-hidden" style="height:150px;">
+                                            <?php echo $post['post_content'] ?>
+                                        </div>
+                                        <p class="card-text m-0"><small class="text-muted"><strong>Cập Nhật:<?php echo $post['create_time'] ?> </strong></small></p>
+                                        <p class="card-text"><small class="text-muted"><strong>Người Viết:<?php echo $post['fullname'] ?></strong></small></p>
                                     </div>
-                                    <p class="card-text m-0"><small class="text-muted"><strong>Cập Nhật:<?php echo $post['create_time'] ?> </strong></small></p>
-                                    <p class="card-text"><small class="text-muted"><strong>Người Viết:<?php echo $post['fullname'] ?></strong></small></p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 <?php } ?>
             </div>
         </div>
         <div class="text-center mt-5">
-            <button class="btn btn-outline-info"> <h2>Xem Thêm Tin</h2></button>
+            <button class="btn btn-outline-info">
+                <h2>Xem Thêm Tin</h2>
+            </button>
         </div>
     </div>
     <script>
@@ -193,7 +150,7 @@
                 margin: 10,
                 autoplay: true,
                 autoplayTimeout: 2000,
-                // autoplayHoverPause: true,
+                autoplayHoverPause: true,
             });
             $("#product-new_owl").owlCarousel({
                 items: 4,
@@ -201,9 +158,9 @@
                 margin: 10,
                 autoplay: true,
                 autoplayTimeout: 2000,
-                rtl:true,
-                // autoplayHoverPause: true,
+                rtl: true,
+                autoplayHoverPause: true,
             });
         });
     </script>
-<?php get_footer() ?>
+    <?php get_footer() ?>

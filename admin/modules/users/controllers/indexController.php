@@ -67,7 +67,10 @@ function show_managerAction()
 
    load_view('show_manager', $data);
 }
-
+function p($string)
+{
+   return $_POST[$string];
+}
 function addAction()
 {
    global $error;
