@@ -30,6 +30,7 @@
 .title-log {
     display: none;
     position: absolute;
+    z-index: 999;
 }
 
 .menu-item {
@@ -66,7 +67,7 @@
     color: rgb(81, 212, 81);
 }
 .num-oder{ 
-    top: 10%;
+    top: 25%;
     text-align: center;
     right: 13%;
     font-size: 20px;
@@ -75,6 +76,7 @@
     position: absolute;
     color: red;
     border-radius: 50%;
+    z-index: 0;
 }
 /* ================= content ================= */
 
@@ -87,6 +89,7 @@
     right: 6% !important;
     width: 20% !important;
     display: none;
+    z-index: 99;
 }
 
 .icon-2 {
@@ -134,7 +137,7 @@
 .btn-buy{
     position: absolute;
     bottom: -40px;
-    left: 35%;
+    left: 25%;
     transition: 0.5s;
 }
 .card-hot:hover .btn-buy{
@@ -161,4 +164,29 @@
     background: rgba(0, 0, 0, 0.753);
     transition: 0.5s;
 
+}
+/* =================================sidebar=================================== */
+#sidebar{
+    position: absolute;
+    left: 0;
+    top: 90px;
+
+    width: 300px;
+    min-height: 810px;
+
+    background: #000;
+
+}
+
+.owl-nav{
+    display: flex;
+    position: absolute;
+    top: 70px;
+    justify-content: space-between;
+    width: 580px;
+    left: -90px;
+    z-index: -99;
+}
+.owl-prev .fa,.owl-next .fa {
+    font-size: 80px;
 }

@@ -64,12 +64,12 @@
                     <?php foreach ($list_product_hot as $item) { ?>
                         <div class="item overflow-hidden" style="width:290px;height:500px;">
                             <div class="card card-hot" style="width:290px;height:500px;">
-                                <a href="">
+                                <a href="?mod=detail&action=index&id=<?php echo $item['product_id'] ?>">
                                     <img src="<?php echo "admin/" . $item['thumb_url']['img_url']; ?>" class="card-img-top" alt="...">
                                 </a>
                                 <div class="card-body">
                                     <h5 class="card-title overflow-hidden" style="height: 55px;"><?php echo $item['product_name']; ?></h5>
-                                    <a href="#" class="btn btn-buy btn-primary">Mua Ngay</a>
+                                    <a href="?mod=cart&action=index&id=<?php echo $item['product_id'] ?>" class="btn btn-buy btn-primary">Thêm Vào Giỏ Hàng</a>
                                 </div>
                             </div>
                         </div>
@@ -88,12 +88,12 @@
                         <?php foreach ($list_product_new as $item) { ?>
                             <div class="item overflow-hidden" style="width:290px;height:500px;">
                                 <div class="card card-hot" style="width:290px;height:500px;">
-                                    <a href="">
+                                    <a href="?mod=detail&action=index&id=<?php echo $item['product_id'] ?>">
                                         <img src="<?php echo "admin/" . $item['thumb_url']['img_url']; ?>" class="card-img-top" alt="..."></a>
                                     <div class="card-body">
                                         <h5 class="card-title card-title-new"><?php echo $item['product_name']; ?></h5>
                                         <div class="btn-bg">
-                                            <a href="#" class="btn btn-buy btn-primary">Mua Ngay</a>
+                                            <a href="?mod=cart&action=index&id=<?php echo $item['product_id'] ?>" class="btn btn-buy btn-primary">Thêm Vào Giỏ Hàng</a>
                                         </div>
                                     </div>
                                 </div>

@@ -32,7 +32,7 @@
           <div class="col-md-8  mt-2">
             <div id="header-menu">
               <ul id="main-menu" class="d-flex justify-content-between align-middle">
-                <li class="menu-item pt-3 list-unstyled"><a href="#" class="text-decoration-none fw-bolder text-light fs-4">Trang Chủ</a></li>
+                <li class="menu-item pt-3 list-unstyled"><a href="?mod=home&action=index" class="text-decoration-none fw-bolder text-light fs-4">Trang Chủ</a></li>
                 <li id="drop-menu" class="menu-item pt-3 list-unstyled"><a href="#" class="text-decoration-none fw-bolder text-light fs-4">Thời Trang <i class="icon-1 fas fa-chevron-circle-down"></i></a>
                   <!-- ===============drop-menu======================= -->
                   <span style="display: block;width:180px;height: 20px;"></span>
@@ -59,9 +59,7 @@
             </h3>
             <h3 class="pt-3" id="login"><a href="#" class="text-decoration-none fw-bolder text-light"><i class=" icon ms-5 mt-1 fs-1 fas fa-sign-in-alt"></i><span class=" bg-dark title-log p-1  text-info">Đăng Nhập</span></a></h3> 
             
-             <h3 class="pt-3" id="cart"><a href="#" class="text-decoration-none fw-bolder text-light"><i class="ms-5 mt-2 fs-2 fas fa-shopping-cart"></i> <span class="num-oder"> 0  </span></a></h3>
-
-
+             <h3 class="pt-3" id="cart"><a href="?mod=cart&action=index" class="text-decoration-none fw-bolder text-light"><i class="ms-5 mt-2 fs-2 fas fa-shopping-cart"></i> <span class="num-oder">0 </span></a></h3>
           </div>
         </div>
       </div>
