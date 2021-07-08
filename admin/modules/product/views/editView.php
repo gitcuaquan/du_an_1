@@ -10,7 +10,6 @@ foreach($list_img as $key=>$img){
 }
 
 $url = get_thumb_by_id($img_id);
-// show_array($img_url);
 $check_type = array(
     "Thời Trang Nam" => 'QANA',
     "Thời Trang Nữ" => 'QANU',

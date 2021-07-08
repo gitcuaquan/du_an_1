@@ -1,6 +1,7 @@
 <?php get_header();
 // get_sidebar();
 // show_array($list_img);
+
 ?>
 
 
@@ -9,20 +10,24 @@
         <div class="col-md-1"> </div>
         <div class="col-md-4">
             <div id="img-main">
-                <img style="width:415px;height:550px" src="<?php echo "admin/".$list_img[0]['img_url'] ?>" class="img-fluid" id="img_show" alt="">
+                <span class='zoom' id='img_show'>
+                    <img src=''  class="img-fluid" id="img_show-url"  style="width:415px;height:550px"   />
+                </span>
             </div>
             <div id="carousel">
                 <div class="owl-carousel owl-theme">
-                <?php foreach($list_img as $item){ ?>
-                    <div class="item">
-                        <img src=" <?php echo"admin/". $item['img_url']; ?>" class="img-fluid" alt="">
-                    </div>
-               <?php  } ?>
-                  
+                    <?php for ($i = 1; $i < count($list_img); $i++) { ?>
+                        <div class="item">
+                            <img src=" <?php echo "admin/" . $list_img[$i]['img_url']; ?>" class="img-fluid img_show" alt="">
+                        </div>
+                    <?php } ?>
+
+
+
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-5">
 
         </div>
     </div>
@@ -48,12 +53,17 @@
     $(".owl-prev").html('<i class="fa fa-chevron-left"></i>');
     $(".owl-next").html('<i class="fa fa-chevron-right"></i>');
 
-    $(document).ready(function () {
-    //    $(".owl-item.active .item img").click(function () { 
-    //    var img = $(this).attr('src')
-    //   $("#img_show").attr('src', img);
-    //    });
-    $(".active").addClass("active_img");
+    $(document).ready(function() {
+        $(".owl-item.active:first img").addClass("show");
+        var link = $(".show").attr("src");
+        $("#img_show-url").attr("src", link);
+        $(".owl-item").click(function() {
+            var a = $(this).children().children();
+            $(".owl-item .item img.show").removeClass('show')
+            $(a).addClass("show");
+            var link = $(".show").attr("src");
+            $("#img_show-url").attr("src", link);
+        });
     });
 </script>
 <?php get_footer() ?>

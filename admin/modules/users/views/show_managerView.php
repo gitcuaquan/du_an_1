@@ -31,7 +31,7 @@
                                     <td ><?php echo $user['fullname'] ?></td>
                                     <td ><?php echo $user['email'] ?></td>
                                     <td ><?php echo $user['address'] ?></td>
-                                    <td ><?php echo $user['phone'] ?></td>
+                                    <td ><?php echo "0".$user['phone'] ?></td>
                                     <td> <img src="https://chart.googleapis.com/chart?chs=100x100&cht=qr&chl=user=<?php echo $user['user_name'] ?>" alt=""></td>
                                     <td class="text-center ">
                                   <div class="d-flex mt-4">

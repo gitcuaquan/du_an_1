@@ -6,7 +6,7 @@ function check_user($username,$password){
         return true;
 }
 function get_user_by_username($username){
-   return $result= db_fetch_row("SELECT * FROM `tbl_user`where `username`='{$username}'");
+   return $result= db_fetch_row("SELECT * FROM `tbl_manager`where `user_name`='{$username}'");
     
 }
 function get_all_manager(){

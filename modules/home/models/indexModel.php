@@ -18,7 +18,7 @@ function get_product_new(){
       $data[$n]['thumb_url']=get_img_by_img_id($result[$i]['img_id']);
    }
   }else{
-   for($i=$count;$i>=0;$i--){
+   for($i=$count-1;$i>=0;$i--){
       $n = $t++;
       $data[$n]=$result[$i];
       $data[$n]['thumb_url']=get_img_by_img_id($result[$i]['img_id']);

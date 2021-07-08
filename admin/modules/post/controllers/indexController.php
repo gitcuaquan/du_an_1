@@ -1,4 +1,7 @@
 <?php
+
+use GuzzleHttp\Promise\Is;
+
 function construct()
 {
 }
@@ -52,6 +55,11 @@ function showAction()
 
 function delAction()
 {
+    load_model('index');
+    $id = $_GET['id'];
+    $post = get_post_by_id($id);
+    unlink( $post['thumb_url']);
+    db_delete(`tbl_post`,"`post_id`={$id}");
 }
 function updateAction()
 {
@@ -86,7 +94,10 @@ function updateAction()
         if (empty($error)) {
             $time  = convert_time();
             $thub_old =$post['thumb_url'];
-            unlink($thub_old);
+            if($thub_old!=$thumbnail_url){
+                unlink($thub_old);
+            }
+           
             $data = array(
                 'post_title' => $post_title,
                 'post_content' => $post_content,

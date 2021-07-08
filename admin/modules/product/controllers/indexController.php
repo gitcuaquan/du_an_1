@@ -145,8 +145,6 @@
         $data = array(
             'list_product' => $list_product,
         );
-
-
         load_view("show", $data);
     }
     function upload_imgAction()
