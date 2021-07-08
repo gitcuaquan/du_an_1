@@ -195,18 +195,23 @@
     position: absolute;
     top: 70px;
     justify-content: space-between;
-    width: 580px;
-    left: -90px;
+    width: 540px;
+    left: -70px;
     z-index: -99;
 }
 
 .owl-prev .fa,
 .owl-next .fa {
-    font-size: 80px;
+    font-size: 60px;
 }
 
 
 /* =====================DETAIL =========================== */
+
+#img-show {
+    width: 500px;
+    height: 500px;
+}
 
 .img_show {
     opacity: 0.5;

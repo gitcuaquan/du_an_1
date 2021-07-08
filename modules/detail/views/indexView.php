@@ -1,13 +1,13 @@
 <?php get_header();
 // get_sidebar();
-// show_array($list_img);
+// show_array($amount);
 
 ?>
 
 
 <div class="container">
     <div class="row mt-5">
-        <div class="col-md-1"> </div>
+        
         <div class="col-md-4">
             <div id="img-main">
                 <span class='zoom' id='img_show'>
@@ -27,43 +27,20 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-1"> </div>
         <div class="col-md-5">
-
+            <h4><?php echo $product[0]['product_name']?></h4>
+            <h5> Mã Sản Phẩm: <strong class="text-info"> <?php echo $product[0]['product_code']?></strong>  </h5>
+            <hr>
+            <?php foreach ($amount as  $item) { ?>
+              <div id="size" class =" w-25 d-flex justify-content-between ">
+               
+              <h4 class = "size text-uppercase d-block"> <?php echo $item['size_name'] ?></h4>
+               <h4 class = "border  d-block">  <?php echo $item['amount'] ?></h4>
+              </div>
+            <?php } ?>
         </div>
     </div>
 </div>
-<script>
-    $('.owl-carousel').owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: true,
-        dots: false,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 2
-            },
-            1000: {
-                items: 3
-            }
-        }
-    })
-    $(".owl-prev").html('<i class="fa fa-chevron-left"></i>');
-    $(".owl-next").html('<i class="fa fa-chevron-right"></i>');
-
-    $(document).ready(function() {
-        $(".owl-item.active:first img").addClass("show");
-        var link = $(".show").attr("src");
-        $("#img_show-url").attr("src", link);
-        $(".owl-item").click(function() {
-            var a = $(this).children().children();
-            $(".owl-item .item img.show").removeClass('show')
-            $(a).addClass("show");
-            var link = $(".show").attr("src");
-            $("#img_show-url").attr("src", link);
-        });
-    });
-</script>
+<script src="public/js/action.js"></script>
 <?php get_footer() ?>
