@@ -69,7 +69,7 @@
                                 </a>
                                 <div class="card-body">
                                     <h5 class="card-title overflow-hidden" style="height: 55px;"><?php echo $item['product_name']; ?></h5>
-                                    <a href="?mod=cart&action=index&id=<?php echo $item['product_id'] ?>" class="btn btn-buy btn-primary">Thêm Vào Giỏ Hàng</a>
+                                    <a href="?mod=cart&action=add&id=<?php echo $item['product_id'] ?>" class="btn btn-buy btn-primary">Thêm Vào Giỏ Hàng</a>
                                 </div>
                             </div>
                         </div>
@@ -93,7 +93,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title card-title-new"><?php echo $item['product_name']; ?></h5>
                                         <div class="btn-bg">
-                                            <a href="?mod=cart&action=index&id=<?php echo $item['product_id'] ?>" class="btn btn-buy btn-primary">Thêm Vào Giỏ Hàng</a>
+                                            <a href="?mod=cart&action=add&id=<?php echo $item['product_id'] ?>" class="btn btn-buy btn-primary">Thêm Vào Giỏ Hàng</a>
                                         </div>
                                     </div>
                                 </div>

@@ -1,0 +1,3 @@
+#new_owl .owl-nav .owl-prev .fa, #new_owl .owl-nav.owl-next .fa{
+        display: none !important;
+}

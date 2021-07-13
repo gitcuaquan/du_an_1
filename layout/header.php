@@ -25,7 +25,7 @@
       <div class="container ">
         <div class="row">
           <div class="col-md-2">
-            <a href="#">
+            <a href="?mod=home&action=index">
               <img src="public/img/logoquan.png" class="img-fluid" alt="">
             </a>
           </div>

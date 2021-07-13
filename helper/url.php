@@ -14,6 +14,6 @@ function main_url($url = ""){
 function redirect($url = "")
 {  
     global $config;
-    $path = $config['main_url'].$url;
+    $path = $config['base_url'].$url;
     header("Location: {$path}");
 }
