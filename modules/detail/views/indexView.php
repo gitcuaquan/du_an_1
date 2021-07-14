@@ -8,7 +8,9 @@ for ($i = 0; $i < 3; $i++) {
 
 <div class="container">
     <div class="row mt-5 mb-5">
-
+    <div id="alert" >
+      
+      </div>
         <div class="col-md-4">
             <div id="img-main">
                 <span class='zoom' id='img_show'>
@@ -60,14 +62,12 @@ for ($i = 0; $i < 3; $i++) {
             <h3><strong class="text-info">Giá Sản Phẩm : </strong>
                 <?php echo vnd($product[0]['product_price']) ?>
             </h3>
-            <button class="btn btn-primary"><a href="?mod=cart&action=add&id=<?php echo $id; ?>" class="text-decoration-none text-light fw-bold">Thêm Vào Giỏ
-                    Hàng</a></button>
-            <button class="btn btn-success"><a href="?mod=cart&action=buy_now" class="text-decoration-none text-light fw-bold">Mua
-                    Ngay</a></button>
+            <button id="<?php echo $id; ?>" class="btn btn-add btn-primary">Thêm Vào Giỏ Hàng</button>
         </div>
     </div>
     <!-- ===================== end show info ========================================= -->
 
 </div>
 <script src="public/js/action.js"></script>
+<script src="public/js/ajax.js"></script>
 <?php get_footer() ?>

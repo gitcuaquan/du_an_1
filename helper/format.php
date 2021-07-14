@@ -1,4 +1,4 @@
 <?php
-function vnd($number, $suffix = 'đ'){
+function vnd($number, $suffix = 'VNĐ'){
     return number_format($number).$suffix;
 }

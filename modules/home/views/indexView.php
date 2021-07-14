@@ -1,5 +1,8 @@
 <?php get_header();  ?>
 <div class="container-fluid">
+    <div id="alert" >
+      
+    </div>
     <div class="row pb-5 ">
         <div class="col-md-12 p-0 col-12">
             <div id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel">
@@ -69,7 +72,9 @@
                                 </a>
                                 <div class="card-body">
                                     <h5 class="card-title overflow-hidden" style="height: 55px;"><?php echo $item['product_name']; ?></h5>
-                                    <a href="?mod=cart&action=add&id=<?php echo $item['product_id'] ?>" class="btn btn-buy btn-primary">Thêm Vào Giỏ Hàng</a>
+                                    <div class="btn-bg">
+                                        <button class="btn btn-buy btn-primary" id="<?php echo $item['product_id'] ?>"> Thêm Vào Giỏ Hàng</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -93,7 +98,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title card-title-new"><?php echo $item['product_name']; ?></h5>
                                         <div class="btn-bg">
-                                            <a href="?mod=cart&action=add&id=<?php echo $item['product_id'] ?>" class="btn btn-buy btn-primary">Thêm Vào Giỏ Hàng</a>
+                                        <button class="btn btn-buy btn-primary" id="<?php echo $item['product_id'] ?>"> Thêm Vào Giỏ Hàng</button>
                                         </div>
                                     </div>
                                 </div>
@@ -137,6 +142,8 @@
             </button>
         </div>
     </div>
+    <script src="public/js/ajax.js"></script>
+
     <script>
         var myCarousel = document.querySelector('#carouselExampleCaptions')
         var carousel = new bootstrap.Carousel(myCarousel, {

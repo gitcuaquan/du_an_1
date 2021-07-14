@@ -1,5 +1,7 @@
 <?php get_header();
-$cart_buy = $_SESSION['cart']['buy']; ?>
+if (isset($_SESSION['cart']['buy'])) {
+    $cart_buy = $_SESSION['cart']['buy'];
+} ?>
 <div class="container">
     <h1 class="text-center bg-secondary p-2 mt-4 rounded">Giỏ Hàng Của Bạn</h1>
     <div class="row">
@@ -22,12 +24,12 @@ $cart_buy = $_SESSION['cart']['buy']; ?>
 
                         <?php $t = 1;
                         foreach ($cart_buy as $cart_item) { ?>
-                            <tr>
+                            <tr class="<?php echo "r".$cart_item['product_id']; ?>">
                                 <th scope="row"><?php echo $t++; ?></th>
                                 <td><?php echo $cart_item['product_name'] ?> </td>
                                 <td><strong><?php echo $cart_item['product_code'] ?></strong></td>
                                 <td><?php echo vnd($cart_item['product_price']); ?></td>
-                                <td><input class="w-50" type="number" min="1" max="20" value="<?php echo $cart_item['product_qty']; ?>"></td>
+                                <td><input class="w-50 num_oder" data-id="<?php echo $cart_item['product_id']; ?>" type="number" min="1" max="20" value="<?php echo $cart_item['product_qty']; ?>"></td>
                                 <td>
                                     <select class="form-select w-75" aria-label="Default select example">
                                         <?php foreach ($cart_item['product_size'] as $size) { ?>
@@ -35,8 +37,8 @@ $cart_buy = $_SESSION['cart']['buy']; ?>
                                         <?php } ?>
                                     </select>
                                 </td>
-                                <td><?php echo vnd($cart_item['product_total']); ?></td>
-                                <td><button class="btn btn-danger"> <a class="text-decoration-none text-light fw-bold" href="?mod=cart&action=delete&id=<?php echo $cart_item['product_id']; ?>">Xóa Sản Phẩm</a></button></td>
+                                <td id= "sub_total<?php echo $cart_item['product_id']; ?>"><?php echo vnd($cart_item['product_total']); ?></td>
+                                <td><button class="btn btn-delete btn-danger" id="<?php echo $cart_item['product_id']; ?>"> Xóa Sản Phẩm</button></td>
                             </tr>
                         <?php } ?>
 
@@ -45,12 +47,13 @@ $cart_buy = $_SESSION['cart']['buy']; ?>
                     </tbody>
                 </table>
         </div>
+        <!--===============================================bill ===================================== -->
         <div class="col-md-3 ">
             <div class="border p-2" id="bill">
                 <h3 class="text-center">Hóa Đơn</h3>
                 <p id="bill_id">Mã Hóa Đơn </p>
                 <strong>Danh Sách Sản Phẩm:</strong>
-                <u class="">
+                <ul class="">
                     <li>sản phẩm 1</li>
                     <li>sản phẩm 1</li>
                     <li>sản phẩm 1</li>
@@ -70,6 +73,8 @@ $cart_buy = $_SESSION['cart']['buy']; ?>
                 </div>
             </div>
         </div>
+        
+        <!-- ==========================================bill ============================================ -->
     <?php  } else {
 
                 echo "   <h1 class=\"text-center text-info p-2  mt-4 rounded\">Chưa Có Sản Phẩm Nào Vui Lòng Thêm Sản Phẩm</h1>";
@@ -77,4 +82,5 @@ $cart_buy = $_SESSION['cart']['buy']; ?>
             } ?>
     </div>
 </div>
+<script src="public/js/ajax.js"></script>
 <?php get_footer() ?>

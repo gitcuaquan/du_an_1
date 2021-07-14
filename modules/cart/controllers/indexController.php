@@ -10,6 +10,7 @@ function addAction()
 {
    load_model('index');
    $id = $_GET['id'];
+   $result = array();
    $product = get_product_by_id($id);
    $size = get_size_by_id($id);
    $qty = 1;
@@ -17,7 +18,7 @@ function addAction()
       (int)$qty = $_SESSION['cart']['buy'][$id]['product_qty'] + 1;
       $_SESSION['cart']['buy'][$id]['product_qty'] = $qty;
       $_SESSION['cart']['buy'][$id]['product_total'] = (int)$qty * (int) $_SESSION['cart']['buy'][$id]['product_price'];
-      redirect("?mod=detail&action=index&id={$id}");
+      $result['alert'] = "success";
    } else {
       $_SESSION['cart']['buy'][$id] = array(
          'product_id' => $product['product_id'],
@@ -28,17 +29,36 @@ function addAction()
          'product_qty' => (int)$qty,
          'product_total' => (int)$qty * (int)$product['product_price'],
       );
-      redirect("?mod=detail&action=index&id={$id}");
+      $result['alert'] = "success";
    }
-   // unset($_SESSION['cart']['buy']);
+   echo json_encode($result);
 }
-function deleteAction(){
+
+function deleteAction()
+{
    $id = $_GET['id'];
-   if(empty($id)){
+   $result = array();
+   if (empty($id)) {
       unset($_SESSION['cart']['buy']);
-   }else{
+      $result['alert'] = "success";
+   } else {
       unset($_SESSION['cart']['buy'][$id]);
+      $result['alert'] = "success";
    }
+   echo json_encode($result);
+}
+
+function update_numAction(){
+   load_model('index');
+   $id = $_GET['id'];  
+   $val = $_GET['val'];
+   if (isset($_SESSION['cart']['buy']) && array_key_exists($id, $_SESSION['cart']['buy'])) {
+      $_SESSION['cart']['buy'][$id]['product_qty'] = $val;
+      $_SESSION['cart']['buy'][$id]['product_total'] = (int)$val * (int) $_SESSION['cart']['buy'][$id]['product_price'];
+      $result['alert'] = "success";
+      $result['sub_total'] = vnd($_SESSION['cart']['buy'][$id]['product_total']);
+   } 
+   echo json_encode($result);
    
-   redirect("?mod=cart&action=index");
+    
 }
