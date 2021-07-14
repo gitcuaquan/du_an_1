@@ -18,5 +18,12 @@ function update_info_cart()
             'num_oder' => $num_oder,
             'total' => vnd($total)
         );
+        array(
+            'num_oder' => $num_oder,
+            'total' => vnd($total)
+        );
     }
+}
+function createBillId(){
+    return "BILL-".time();
 }

@@ -15,6 +15,7 @@
   <script src="public/owl_carosel/owl.carousel.min.js"></script>
   <script src="public/js/bootstrap/bootstrap.min.js"></script>
   <script src="public/js/header.js"></script>
+  <script src="public/js/ajax.js"></script>
   <link rel="icon" href="public/img/logoquan.png" type="image/x-icon">
   <title>Mạnh Quân Store</title>
 </head>
@@ -60,7 +61,7 @@
             </h3>
             <h3 class="pt-3" id="login"><a href="#" class="text-decoration-none fw-bolder text-light"><i class=" icon ms-5 mt-1 fs-1 fas fa-sign-in-alt"></i><span class=" bg-dark title-log p-1  text-info">Đăng Nhập</span></a></h3> 
             
-             <h3 class="pt-3" id="cart"><a href="?mod=cart&action=index" class="text-decoration-none fw-bolder text-light"><i class="ms-5 mt-2 fs-2 fas fa-shopping-cart"></i> <span class="num-oder">0 </span></a></h3>
+             <h3 class="pt-3" id="cart"><a href="?mod=cart&action=index" class="text-decoration-none fw-bolder text-light"><i class="ms-5 mt-2 fs-2 fas fa-shopping-cart"></i> <span id="show_num_oder" class="num-oder text-primary"><?php if(isset($_SESSION['cart']['info'])){echo $_SESSION['cart']['info']['num_oder']; }else{echo "0";} ?></span></a></h3>
           </div>
         </div>
       </div>

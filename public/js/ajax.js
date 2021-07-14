@@ -12,6 +12,7 @@ $(document).ready(function () {
             success: function (data) {
                 if (data.alert == "success") {
                     $(".r" + id).remove();
+                    $("#show_num_oder").text(data.qty);
                 }
             }
         });
@@ -29,6 +30,7 @@ $(document).ready(function () {
             dataType: "json",
             success: function (data) {
                 if (data.alert == "success") {
+                    $("#show_num_oder").text(data.qty);
                     $("#alert").show(500);
                     $("#alert").html("<p class=\"alert-item\">Thêm Sản Phẩm Thành Công <i class=\"fas px-3 text-success fs-3 fa-check\"></i></p>");
                 }
@@ -50,7 +52,7 @@ $(document).ready(function () {
             dataType: "json",
             success: function (data) {
                 if (data.alert == "success") {
-                    alert("ok")
+                    $("#show_num_oder").text(data.qty);
                     $("#alert").show(500);
                     $("#alert").html("<p class=\"alert-item\">Thêm Sản Phẩm Thành Công <i class=\"fas px-3 text-success fs-3 fa-check\"></i></p>");
                 }
@@ -77,9 +79,15 @@ $(".num_oder").change(function () {
         dataType: "json",
         success: function (data) {
             if (data.alert == "success") {
-              const sub_total = data.sub_total;
-              $("#sub_total"+id).text(sub_total);
-            } else { console.log("error") }
+                
+                $("#show_num_oder").text(data.qty);
+                $("#num").text("Tống số Lượng : " + data.qty);
+                $("#t-total").text("Tống Giá : " + data.total);
+                const sub_total = data.sub_total;
+                $("#sub_total" + id).text(sub_total);
+            } else { 
+                console.log("error") 
+            }
         }
     });
 

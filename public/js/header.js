@@ -21,4 +21,5 @@ $(document).ready(function () {
         $(".icon-2").slideToggle(200);
         $(".icon-2").removeClass("icon-2-e");
     });
+    
 });
