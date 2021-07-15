@@ -1,5 +1,17 @@
 $(document).ready(function () {
+    $(".ip-c").keyup(function (e) {
+        const id = $(this).attr('data-index');
+        let val = $(this).val();
+        $("#"+id).text(val);
 
+    });
+    $("#pay").click(function (e) { 
+        $("#info_customer").slideDown(500);
+    });
+    $(".pay-cancel").click(function (e) { 
+        $("#info_customer").slideUp(500);
+        
+    });
     // ============ajaxdelete==================================
     $(".btn-delete").click(function () {
         var id = $(this).attr('id');
@@ -90,5 +102,27 @@ $(".num_oder").change(function () {
             }
         }
     });
+    $(".ajax").change(function(){
+        const id = $(this).attr("data-index");
+        const size = $(this).val();
+        let data = {id:id,size:size}
+        $.ajax({
+            type: "GET",
+            url: "?mod=cart&action=update_size",
+            data: data,
+            dataType: "json",
+            success: function (data) {
+                if (data.alert == "success") {
+                   console.log("ok")
+                } else { 
+                    console.log("error") 
+                }
+            }
+        });
+    });
+    
 
 });
+// ==================================== size =================================
+
+

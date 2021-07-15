@@ -27,3 +27,10 @@ function update_info_cart()
 function createBillId(){
     return "BILL-".time();
 }
+function getVal($str){
+    if(isset($_GET[$str])){
+        return $_GET[$str];
+    }else{
+        return "";
+    }
+}

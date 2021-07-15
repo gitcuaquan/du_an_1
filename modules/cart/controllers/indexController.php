@@ -7,6 +7,12 @@ function construct()
 }
 function indexAction()
 {
+  global $error;
+   if(isset($_POST['btn-pay'])){
+      if(empty($_POST['name'])){
+         
+      }
+   }
    load_view('index');
 }
 function addAction()
@@ -82,9 +88,14 @@ function update_numAction()
    load_model('index');
    $id = $_GET['id'];
    $val = $_GET['val'];
+
    if (isset($_SESSION['cart']['buy']) && array_key_exists($id, $_SESSION['cart']['buy'])) {
+      
       $_SESSION['cart']['buy'][$id]['product_qty'] = $val;
+   
       $_SESSION['cart']['buy'][$id]['product_total'] = (int)$val * (int) $_SESSION['cart']['buy'][$id]['product_price'];
+      
+      
       $result['alert'] = "success";
       $result['sub_total'] = vnd($_SESSION['cart']['buy'][$id]['product_total']);
       update_info_cart();
@@ -92,4 +103,26 @@ function update_numAction()
       $result['qty'] = $_SESSION['cart']['info']['num_oder'];
    }
    echo json_encode($result);
+}
+
+
+function update_sizeAction()
+{
+   load_model('index');
+   $id = $_GET['id'];
+   $size = $_GET['size'];
+
+   if (isset($_SESSION['cart']['bill']) && array_key_exists($id, $_SESSION['cart']['bill'])) {
+      $_SESSION['cart']['bill'][$id]['size'] = $size."-SPID". $_SESSION['cart']['bill'][$id]['product_id'];
+      $result['alert'] = "success";
+   }else{
+      $_SESSION['cart']['bill'][$id]['size'] = $size;
+      $result['alert'] = "success";
+   }
+   echo json_encode($result);
+}
+
+function billAction(){
+  
+   
 }
