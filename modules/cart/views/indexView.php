@@ -52,6 +52,7 @@ if (isset($_SESSION['cart']['buy'])) {
         </div>
     </div>
     <h1 class="text-center bg-secondary p-2 mt-4 rounded">Giỏ Hàng Của Bạn</h1>
+    <h3 class="text-center text-success" style="height: 40px;"><?php echo form_error('bill'); ?></h3>
     <div class="row">
         <div class="col-md-9 <?php if (empty($cart_buy)) {
                                     echo "w-100";
@@ -97,7 +98,7 @@ if (isset($_SESSION['cart']['buy'])) {
         <div class="col-md-3 ">
             <div class="border p-2" id="bill">
                 <h3 class="text-center">Hóa Đơn</h3>
-                <p id="bill_id">Mã Hóa Đơn : <?php echo $_SESSION['cart']['bill-id']; ?> </p>
+                <p id="bill_id">Mã Hóa Đơn : <?php if(isset($_SESSION['cart']['bill-id'])){echo $_SESSION['cart']['bill-id'];}  ?> </p>
                 <p>
                 <div class="mb-3">
                     <select class="form-select" aria-label="Default select example">

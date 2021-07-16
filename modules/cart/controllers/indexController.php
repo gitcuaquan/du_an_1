@@ -7,11 +7,57 @@ function construct()
 }
 function indexAction()
 {
+   load('lib',"validation");
   global $error;
    if(isset($_POST['btn-pay'])){
-      if(empty($_POST['name'])){
-         
+      if(empty($_POST['fullname'])){
+         $error['fullname'] = "chưa có tên khách hàng";
+      }else{
+         $name = $_POST['fullname'];
       }
+      if(empty($_POST['phone'])){
+         $error['phone'] = "chưa có số điện thoại khách hàng";
+      }else{
+         if(is_phone($_POST['phone'])){
+            $phone = $_POST['phone'];
+         }else{
+            $error['phone'] = "chưa đúng định dạng";
+         }
+      }
+      if(empty($_POST['email'])){
+         $error['email'] = "chưa có email khách hàng";
+      }else{
+         if(is_email($_POST['email'])){
+            $email = $_POST['email'];
+         }else{
+            $error['email'] = "email  không đúng định dạnh";
+         }
+      }
+      if(empty($_POST['address'])){
+         $error['address'] = "chưa có địa chỉ khách hàng";
+      }else{
+         $address = $_POST['address'];
+      }
+      if(empty($error)){
+         load_model('index');
+         $data = array(
+            'name'=> $name,
+            'phone'=>$phone,
+            'address'=>$address,
+            'email'=>$email,
+            'bill_code'=>$_SESSION['cart']['bill-id'], 
+            'product'=> json_encode($_SESSION['cart'])
+         );
+         db_insert("tbl_bill",$data);
+         $error['bill']= "Đặt hàng Thành Công ! Vui lòng chờ nhân viên gọi điện xác nhận ! ";
+         unset($_SESSION['cart']['bill-id']);
+         $_SESSION['cart']['bill-id'] = createBillId();
+        
+      }else{
+         $error['bill']= "Đặt không hàng Thành Công ! Vui lòng kiểm tra lại ! ";
+      }
+      
+      
    }
    load_view('index');
 }

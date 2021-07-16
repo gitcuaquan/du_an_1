@@ -8,13 +8,10 @@
                 <li class="list-unstyled p-2"><a href=" ?mod=product&action=show" class="text-dark  text-decoration-none fs-5 fw-bold">Danh Sách Sản Phẩm</a></li>
             </ul>
         </li>
-
-
         <li class="menu-item py-3 list-unstyled fs-5"><i class="fas float-end pt-2 fa-th-list"></i></i>Đơn Hàng <i class="fas float-start fs-3 pt-1 me-3 fa-box"></i>
             <ul class="sub-menu pt-2 ">
-                <li class="list-unstyled p-2"><a href="" class="text-dark  text-decoration-none fs-5 fw-bold">Danh Sách Đơn Hàng</a></li>
+                <li class="list-unstyled p-2"><a href="?mod=bill&action=show" class="text-dark  text-decoration-none fs-5 fw-bold">Danh Sách Đơn Hàng</a></li>
                 <li class="list-unstyled p-2"><a href="" class="text-dark  text-decoration-none fs-5 fw-bold">Trạng Thái Đơn Hàng</a></li>
-                <li class="list-unstyled p-2"><a href="" class="text-dark  text-decoration-none fs-5 fw-bold">Đơn Hàng Đã Huỷ</a></li>
             </ul>
         </li>
 

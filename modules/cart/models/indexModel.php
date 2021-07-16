@@ -34,3 +34,13 @@ function getVal($str){
         return "";
     }
 }
+
+function isset_bill_code($bill_code){
+   $result = db_fetch_row( "SELECT `bill_code` FROM `tbl_bill` WHERE `bill_code`= '{$bill_code}' ");
+   if($result >0){
+       return true;
+   }
+  else{
+    return false;
+  }
+}
